@@ -50,7 +50,7 @@ android {
         targetSdk = 35
         versionCode = gitCommitCount
         versionName = "1.0"
-        setProperty("archivesBaseName", "KsuWebUI-$versionName-$versionCode")
+        setProperty("archivesBaseName", "KsuWebUI-Plus-$versionName-$versionCode")
     }
 
     buildTypes {

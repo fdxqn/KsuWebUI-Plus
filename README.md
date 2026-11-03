@@ -11,6 +11,15 @@
 > It adds per-module home screen shortcuts, custom icons and names, and a One UI
 > inspired interface. Licensed under GPL-3.0.
 
+## 下载
+
+已签名 APK 见 [Releases](https://github.com/fdxqn/KsuWebUI-Plus/releases)，文件名形如
+`KsuWebUI-Plus-1.0-1.apk`。
+
+- 与官方 KsuWebUI 包名相同、签名不同，安装前请先卸载官方版本，否则会提示签名冲突
+- 首次启动需要授予 Root 权限
+- 安装后应用名为 **KsuWebUI Plus**
+
 ## 功能
 
 - 读取已安装模块，直接打开模块 WebUI；支持启用/禁用、模块信息查看
