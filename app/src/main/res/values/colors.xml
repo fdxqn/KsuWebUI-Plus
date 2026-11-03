@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="surface">#FFFBFE</color>
+    <color name="editor_background">#F5F6F8</color>
+    <color name="editor_card">#FFFFFF</color>
+    <color name="editor_field">#F0F1F4</color>
+    <color name="editor_text">#1F2937</color>
+    <color name="editor_label">#6B7280</color>
+    <color name="oneui_primary">#2F6BFF</color>
+</resources>
