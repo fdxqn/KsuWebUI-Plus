@@ -13,8 +13,9 @@
 
 ## 下载
 
-已签名 APK 见 [Releases](https://github.com/fdxqn/KsuWebUI-Plus/releases)，文件名形如
-`KsuWebUI-Plus-1.0-1.apk`。
+最新版：**[KsuWebUI-Plus-1.0-1.apk](https://github.com/fdxqn/KsuWebUI-Plus/releases/download/v1.0/KsuWebUI-Plus-1.0-1.apk)**（约 1.8 MB）
+
+全部版本见 [Releases](https://github.com/fdxqn/KsuWebUI-Plus/releases)。
 
 - 与官方 KsuWebUI 包名相同、签名不同，安装前请先卸载官方版本，否则会提示签名冲突
 - 首次启动需要授予 Root 权限
