@@ -13,7 +13,7 @@
 
 ## 下载
 
-最新版：**[KsuWebUI-Plus-1.0-1.apk](https://github.com/fdxqn/KsuWebUI-Plus/releases/download/v1.0/KsuWebUI-Plus-1.0-1.apk)**（约 1.8 MB）
+最新版：**[Releases · latest](https://github.com/fdxqn/KsuWebUI-Plus/releases/latest)**，文件名形如 `KsuWebUI-Plus-1.1-4.apk`（约 1.8 MB）
 
 全部版本见 [Releases](https://github.com/fdxqn/KsuWebUI-Plus/releases)。
 
