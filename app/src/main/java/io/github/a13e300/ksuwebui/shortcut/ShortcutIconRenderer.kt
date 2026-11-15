@@ -209,24 +209,48 @@ class ShortcutIconRenderer {
 
         /**
          * Composes an authored square icon so a launcher's masked 72/108 window shows it 1:1.
-         * The ring outside that window is bleed and never visible.
+         * The ring outside that window is bleed: it repeats the artwork's outer rows/columns
+         * so a launcher that crops past 72/108 never shows a second copy of the icon.
          */
         fun adaptiveArtwork(artwork: Bitmap): Bitmap {
             val out = Bitmap.createBitmap(ICON_SIZE, ICON_SIZE, Bitmap.Config.ARGB_8888)
             val canvas = Canvas(out)
             val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
+            val visible = ICON_SIZE * LAUNCHER_VISIBLE_FRACTION
+            val start = (ICON_SIZE - visible) / 2f
+            val end = start + visible
+
+            val width = artwork.width
+            val height = artwork.height
+            val line = 1
             canvas.drawBitmap(
                 artwork,
-                null,
-                RectF(0f, 0f, ICON_SIZE.toFloat(), ICON_SIZE.toFloat()),
+                Rect(0, 0, width, line),
+                RectF(0f, 0f, ICON_SIZE.toFloat(), start + line),
                 paint
             )
-            val visible = ICON_SIZE * LAUNCHER_VISIBLE_FRACTION
-            val left = (ICON_SIZE - visible) / 2f
+            canvas.drawBitmap(
+                artwork,
+                Rect(0, height - line, width, height),
+                RectF(0f, end - line, ICON_SIZE.toFloat(), ICON_SIZE.toFloat()),
+                paint
+            )
+            canvas.drawBitmap(
+                artwork,
+                Rect(0, 0, line, height),
+                RectF(0f, 0f, start + line, ICON_SIZE.toFloat()),
+                paint
+            )
+            canvas.drawBitmap(
+                artwork,
+                Rect(width - line, 0, width, height),
+                RectF(end - line, 0f, ICON_SIZE.toFloat(), ICON_SIZE.toFloat()),
+                paint
+            )
             canvas.drawBitmap(
                 artwork,
                 null,
-                RectF(left, left, left + visible, left + visible),
+                RectF(start, start, end, end),
                 paint
             )
             return out

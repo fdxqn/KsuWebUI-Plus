@@ -47,14 +47,15 @@
     <string name="image_crop_confirm">使用</string>
     <string name="shortcut_pin_requested">请到桌面确认快捷方式。</string>
     <string name="shortcut_pin_unsupported_title">启动器不支持固定</string>
-    <string name="shortcut_pin_unsupported_message">当前启动器不支持添加快捷方式，请从启动器设置中手动添加。</string>
+    <string name="shortcut_pin_unsupported_message">当前启动器不支持固定快捷方式。部分系统需要在设置中允许本应用创建桌面快捷方式。</string>
     <string name="shortcut_pin_failed_title">添加快捷方式失败</string>
-    <string name="shortcut_pin_failed_generic">无法添加快捷方式，请先在桌面移除旧图标后重试。</string>
+    <string name="shortcut_pin_failed_generic">无法添加快捷方式。请在系统设置中允许本应用创建桌面快捷方式，或先在桌面移除旧图标后重试。</string>
     <string name="shortcut_restored">已重新启用桌面图标</string>
     <string name="shortcut_update_failed_title">快捷方式已本地更新</string>
     <string name="shortcut_update_failed_message">如果桌面图标没有变化，请移除后重新添加。</string>
     <string name="shortcut_invalid_hex">颜色格式无效</string>
     <string name="shortcut_ok">确定</string>
+    <string name="shortcut_open_permission_settings">去设置</string>
     <string name="module_actions">模块操作</string>
     <string name="action_open">打开</string>
     <string name="action_add_shortcut">添加到桌面</string>

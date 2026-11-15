@@ -48,14 +48,15 @@
     <string name="image_crop_confirm">Use</string>
     <string name="shortcut_pin_requested">Confirm the shortcut on the home screen.</string>
     <string name="shortcut_pin_unsupported_title">Launcher does not support pinning</string>
-    <string name="shortcut_pin_unsupported_message">Your launcher does not support adding shortcuts. Add it manually from the launcher settings.</string>
+    <string name="shortcut_pin_unsupported_message">Your launcher does not support pinned shortcuts. Some ROMs require allowing this app to create home screen shortcuts in system settings.</string>
     <string name="shortcut_pin_failed_title">Could not add shortcut</string>
-    <string name="shortcut_pin_failed_generic">Could not add the shortcut. Remove the old home icon and try again.</string>
+    <string name="shortcut_pin_failed_generic">Could not add the shortcut. Allow this app to create home screen shortcuts in system settings, or remove the old home icon and try again.</string>
     <string name="shortcut_restored">Home icon restored</string>
     <string name="shortcut_update_failed_title">Shortcut updated locally</string>
     <string name="shortcut_update_failed_message">If the home screen icon did not change, remove it and add it again.</string>
     <string name="shortcut_invalid_hex">Invalid color</string>
     <string name="shortcut_ok">OK</string>
+    <string name="shortcut_open_permission_settings">Settings</string>
     <string name="module_actions">Module actions</string>
     <string name="action_open">Open</string>
     <string name="action_add_shortcut">Add to home screen</string>

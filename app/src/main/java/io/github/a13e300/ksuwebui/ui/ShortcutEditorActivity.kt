@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
+import android.provider.Settings
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.text.InputFilter
@@ -436,16 +437,47 @@ class ShortcutEditorActivity : AppCompatActivity(), FileSystemService.Listener {
                 finishWithResult(shortcutId)
             }
 
-            PinResult.Unsupported -> showMessage(
+            PinResult.Unsupported -> showPinHelp(
                 R.string.shortcut_pin_unsupported_title,
-                R.string.shortcut_pin_unsupported_message
-            ) { finishWithResult(shortcutId) }
+                getString(R.string.shortcut_pin_unsupported_message),
+                shortcutId
+            )
 
-            is PinResult.Failed -> showMessage(
+            is PinResult.Failed -> showPinHelp(
                 R.string.shortcut_pin_failed_title,
-                result.message
-            ) { finishWithResult(shortcutId) }
+                result.message,
+                shortcutId
+            )
         }
+    }
+
+    private fun showPinHelp(@StringRes title: Int, message: CharSequence, shortcutId: String) {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(R.string.shortcut_open_permission_settings) { _, _ ->
+                openShortcutPermissionSettings()
+                finishWithResult(shortcutId)
+            }
+            .setNegativeButton(R.string.shortcut_ok) { _, _ -> finishWithResult(shortcutId) }
+            .setCancelable(false)
+            .show()
+    }
+
+    private fun openShortcutPermissionSettings() {
+        val appDetails = Intent(
+            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+            Uri.fromParts("package", packageName, null)
+        )
+        val miuiEditor = Intent("miui.intent.action.APP_PERM_EDITOR")
+            .putExtra("extra_pkgname", packageName)
+        val target = if (miuiEditor.resolveActivity(packageManager) != null) {
+            miuiEditor
+        } else {
+            appDetails
+        }
+        runCatching { startActivity(target) }
+            .onFailure { runCatching { startActivity(appDetails) } }
     }
 
     private fun showMessage(@StringRes title: Int, @StringRes message: Int, onDismiss: () -> Unit) {

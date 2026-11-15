@@ -368,6 +368,6 @@ class MainActivity : AppCompatActivity(), FileSystemService.Listener, ModuleActi
     }
 
     companion object {
-        private const val KEY_SHORTCUT_REFRESH = "shortcut_refresh_v1"
+        private const val KEY_SHORTCUT_REFRESH = "shortcut_refresh_v2"
     }
 }
